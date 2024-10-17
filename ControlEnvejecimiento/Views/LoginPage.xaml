@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:ControlEnvejecimiento.Components"
+             x:Class="ControlEnvejecimiento.Views.LoginPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0">
+            <Grid RowDefinitions="*,*,*,*,*" RowSpacing="25">
+                <Image Grid.Row="0" 
+                    Source="logo.png"
+                    HeightRequest="185"/>
+
+                <Entry Grid.Row="1" 
+                    x:Name="EmailEntry" 
+                    Placeholder="Correo" />
+
+                <Entry Grid.Row="2"
+                    x:Name="PasswordEntry"
+                    Placeholder="Contraseña"
+                    IsPassword="True" />
+
+                <Button Grid.Row="3"
+                    x:Name="LoginBtn"
+                    Text="Ingresar"
+                    Clicked="OnLoginClicked" />
+
+                <Label Grid.Row="4">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="De clic " />
+                            <Span Text="Aqui" TextColor="Blue" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" Para registrarse." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
