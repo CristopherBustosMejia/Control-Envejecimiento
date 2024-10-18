@@ -3,44 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:ControlEnvejecimiento.ViewModels;assembly=ControlEnvejecimiento"
              x:Class="ControlEnvejecimiento.Views.SignInPage"
-             Title="SignInPage">
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="inicio">
 
     <ContentPage.BindingContext>
         <viewModel:SignInViewModel/>
     </ContentPage.BindingContext>
-    
-    <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Entry
-                x:Name="NameEntry"
-                Placeholder="Nombre" />
-            
-            <Entry
-                x:Name="EmailEntry"
-                Placeholder="Correo" />
+    <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="0" >
+        <StackLayout Grid.Row="0" HeightRequest="200">
+            <Grid Padding="30,50">
+                <Label Text="Registrarse" Margin="0,40"
+                       TextColor="White" FontSize="Title" FontAttributes="Bold"/>
+                <Label Text="Crea una cuenta" Margin="10,90"
+                       TextColor="#aab3b9" FontSize="13" FontAttributes="Bold"/>
+            </Grid>
+        </StackLayout>
+        <Border Stroke="Transparent" Grid.Row="1"
+                BackgroundColor="White"
+                StrokeThickness="2"  
+                HeightRequest="700"
+                StrokeShape="RoundRectangle 40">
+            <Grid RowDefinitions="80, 80, 80, 80, 50, *" Background="Transparent" RowSpacing="0" Padding="30,0,30,0">
+                <Entry x:Name="NameEntry" Grid.Row="0"
+                       Placeholder="Nombre" Margin="0,30,0,0"/>
 
-            <Entry
-                x:Name="PasswordEntry"
-                Placeholder="Contraseña"
-                IsPassword="True" />
-            
-            <Entry
-                x:Name="ConfirmPassEntry"
-                Placeholder="Contraseña"
-                IsPassword="True" />
+                <Entry x:Name="EmailEntry" Grid.Row="1"
+                       Placeholder="Correo" Margin="0,30,0,0"/>
 
-            <Button
-                x:Name="SignInBtn"
-                Text="Ingresar"
-                Clicked="OnSignInClicked" />
+                <Entry x:Name="PasswordEntry" Grid.Row="2"
+                       Placeholder="Contraseña"
+                       IsPassword="True" Margin="0,30,0,0"/>
 
-            <ActivityIndicator IsRunning="False" Color="BlueViolet" x:Name="activityIndicator"/>
-        </VerticalStackLayout>
-    </ScrollView>
+                <Entry x:Name="ConfirmPassEntry" Grid.Row="3"
+                       Placeholder="Repite contraseña"
+                       IsPassword="True" Margin="0,30,0,0"/>
+
+                <Button x:Name="SignInBtn" Grid.Row="4" TextColor="Black"
+                        Text="Ingresar" HeightRequest="50" Margin="0,80,0,0"
+                        Clicked="OnSignInClicked" Background="#c0e863" FontAttributes="Bold"/>
+
+                <Label Grid.Row="5" Margin="0,80,0,0" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="¿Ya tienes una cuenta?  "/>
+                            <Span Text="Inicia Sesion" TextColor="#71a02b"
+                                  TextDecorations="None">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ActivityIndicator IsRunning="False" Color="BlueViolet" x:Name="activityIndicator"/>
+            </Grid>
+        </Border>
+    </Grid>
 </ContentPage>
