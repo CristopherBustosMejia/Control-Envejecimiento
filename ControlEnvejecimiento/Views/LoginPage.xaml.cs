@@ -15,6 +15,7 @@ namespace ControlEnvejecimiento.Views
             InitializeComponent();
             LoginViewModel viewModel = new LoginViewModel();
             BindingContext = viewModel;
+            
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

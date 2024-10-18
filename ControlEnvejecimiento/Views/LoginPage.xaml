@@ -10,39 +10,62 @@
         <viewModel:LoginViewModel/>
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <VerticalStackLayout Padding="0,0,0,0">
-            <Grid Grid.Row="1" RowDefinitions="*,*,*,*" RowSpacing="25" Padding="30,0" 
-                      BackgroundColor="White" VerticalOptions="End">
+    <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="0" >
+        <StackLayout Grid.Row="0" HeightRequest="200">
+            <Grid Padding="30,50">
+                <Label Text="Inicia sesión en tu&#10;cuenta"
+                       TextColor="White" FontSize="Title" FontAttributes="Bold"/>
+            </Grid>
+        </StackLayout>
+        <Border Stroke="Transparent" Grid.Row="1"
+                    BackgroundColor="White"
+                    StrokeThickness="2"  
+                    HeightRequest="700"
+                    StrokeShape="RoundRectangle 40">
+            <Grid RowDefinitions="80,80,90,50,*" Background="Transparent" RowSpacing="0" Padding="30,0,30,0">
                 <Entry Grid.Row="0" 
                            x:Name="EmailEntry" 
-                           Placeholder="Correo" />
+                           Keyboard="Email"
+                           Placeholder="Correo" Margin="0,30,0,0"/>
 
                 <Entry Grid.Row="1"
                            x:Name="PasswordEntry"
                            Placeholder="Contraseña"
-                           IsPassword="True" />
+                           IsPassword="True" Margin="0,30,0,0"/>
 
-                <Button Grid.Row="2"
-                            x:Name="LoginBtn"
-                            Text="Ingresar"
-                            Clicked="OnLoginClicked" />
-
-                <Label Grid.Row="4">
+                <Label Grid.Row="2" Margin="0,20,0,0" HorizontalOptions="End">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="De clic " />
-                            <Span Text="Aqui" TextColor="Blue" TextDecorations="Underline">
+                            <Span Text="¿Olvidaste tu contraseña?" TextColor="#71a02b"
+                                  TextDecorations="None">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding TapCommand}"/>
                                 </Span.GestureRecognizers>
                             </Span>
-                            <Span Text=" Para registrarse." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Button Grid.Row="3" Background="#c0e863"
+                        x:Name="LoginBtn" Margin="0,-39,0,0"
+                        Text="Ingresar" TextColor="Black" FontAttributes="Bold"
+                        Clicked="OnLoginClicked" HeightRequest="50"/>
+
+                <Label Grid.Row="5" Margin="0,80,0,0" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="¿No tienes una cuenta? "/>
+                            <Span Text="Registrate" TextColor="#71a02b"
+                                  TextDecorations="None">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
             </Grid>
-        </VerticalStackLayout>
-    </ScrollView>
+        </Border>
+    </Grid>
 
 </ContentPage>
