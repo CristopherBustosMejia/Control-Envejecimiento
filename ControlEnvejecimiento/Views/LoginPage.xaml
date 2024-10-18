@@ -2,28 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:components="clr-namespace:ControlEnvejecimiento.Components"
-             x:Class="ControlEnvejecimiento.Views.LoginPage">
+             xmlns:viewModel="clr-namespace:ControlEnvejecimiento.ViewModels;assembly=ControlEnvejecimiento"
+             x:Class="ControlEnvejecimiento.Views.LoginPage"
+             BackgroundImageSource="inicio">
+
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
-        <VerticalStackLayout Padding="30,0">
-            <Grid RowDefinitions="*,*,*,*,*" RowSpacing="25">
-                <Image Grid.Row="0" 
-                    Source="logo.png"
-                    HeightRequest="185"/>
+        <VerticalStackLayout Padding="0,0,0,0">
+            <Grid Grid.Row="1" RowDefinitions="*,*,*,*" RowSpacing="25" Padding="30,0" 
+                      BackgroundColor="White" VerticalOptions="End">
+                <Entry Grid.Row="0" 
+                           x:Name="EmailEntry" 
+                           Placeholder="Correo" />
 
-                <Entry Grid.Row="1" 
-                    x:Name="EmailEntry" 
-                    Placeholder="Correo" />
+                <Entry Grid.Row="1"
+                           x:Name="PasswordEntry"
+                           Placeholder="Contraseña"
+                           IsPassword="True" />
 
-                <Entry Grid.Row="2"
-                    x:Name="PasswordEntry"
-                    Placeholder="Contraseña"
-                    IsPassword="True" />
-
-                <Button Grid.Row="3"
-                    x:Name="LoginBtn"
-                    Text="Ingresar"
-                    Clicked="OnLoginClicked" />
+                <Button Grid.Row="2"
+                            x:Name="LoginBtn"
+                            Text="Ingresar"
+                            Clicked="OnLoginClicked" />
 
                 <Label Grid.Row="4">
                     <Label.FormattedText>

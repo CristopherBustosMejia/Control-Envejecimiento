@@ -11,5 +11,6 @@ namespace ControlEnvejecimiento.Services
     internal interface IClientService
     {
         Task<HttpStatusCode> SigninUserSelf(UsuarioDTO user);
+        Task<HttpStatusCode> LoginUser(Dictionary<String, String> user);
     }
 }

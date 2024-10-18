@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\bck1.png" />
 	  <None Remove="Resources\Images\bck2.png" />
 	  <None Remove="Resources\Images\bck3.png" />
+	  <None Remove="Resources\Images\inicio.png" />
 	  <None Remove="Resources\Images\logo.png" />
 	</ItemGroup>
 

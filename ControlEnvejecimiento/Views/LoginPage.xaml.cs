@@ -1,4 +1,6 @@
-﻿using ControlEnvejecimiento.Services;
+﻿using CommunityToolkit.Maui.Alerts;
+using ControlEnvejecimiento.Services;
+using ControlEnvejecimiento.ViewModels;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
 
@@ -11,12 +13,22 @@ namespace ControlEnvejecimiento.Views
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            LoginViewModel viewModel = new LoginViewModel();
+            BindingContext = viewModel;
         }
 
-        private void OnLoginClicked(object sender, EventArgs e)
+        private async void OnLoginClicked(object sender, EventArgs e)
         {
-           
+            if(EmailEntry.Text == String.Empty && PasswordEntry.Text == String.Empty)
+            {
+                await Toast.Make("Porfavor asegurese de llenar los 2 campos").Show();
+                return;
+            }
+            if(BindingContext is  LoginViewModel viewModel)
+            {
+                bool result  = await viewModel.Login(EmailEntry.Text, PasswordEntry.Text);
+                await Toast.Make(result ? "Loggeado" : "No Loggeado").Show();
+            }
         }
     }
 

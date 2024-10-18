@@ -22,10 +22,18 @@ namespace ControlEnvejecimiento.Services
         public async Task<HttpStatusCode> SigninUserSelf(UsuarioDTO user)
         {
             user.RolId = 2;
-            String requestUri = $"{_baseUri}Usuarios";
+            String requestUri = $"{_baseUri}Usuarios/Subir";
             String jsonContent = JsonConvert.SerializeObject(user);
             StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await _httpClient.PostAsync(requestUri,content);
+            return response.StatusCode;
+        }
+        public async Task<HttpStatusCode> LoginUser(Dictionary<String, String> user)
+        {
+            String requestUri = $"{_baseUri}Usuarios/Login";
+            String jsonContent = JsonConvert.SerializeObject(user);
+            StringContent content = new StringContent(jsonContent,Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await _httpClient.PostAsync(requestUri, content);
             return response.StatusCode;
         }
     }
