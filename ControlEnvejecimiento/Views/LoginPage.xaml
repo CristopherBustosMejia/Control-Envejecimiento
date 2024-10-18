@@ -38,9 +38,9 @@
                         <FormattedString>
                             <Span Text="¿Olvidaste tu contraseña?" TextColor="#71a02b"
                                   TextDecorations="None">
-                                <Span.GestureRecognizers>
+                                <!--<Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding TapCommand}"/>
-                                </Span.GestureRecognizers>
+                                </Span.GestureRecognizers>-->
                             </Span>
                         </FormattedString>
                     </Label.FormattedText>
@@ -54,7 +54,7 @@
                 <Label Grid.Row="5" Margin="0,80,0,0" HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="¿No tienes una cuenta? "/>
+                            <Span Text="¿No tienes una cuenta?  "/>
                             <Span Text="Registrate" TextColor="#71a02b"
                                   TextDecorations="None">
                                 <Span.GestureRecognizers>
@@ -66,6 +66,7 @@
                 </Label>
             </Grid>
         </Border>
+        <Button VerticalOptions="End" Text="Ir a la otra pantalla" Clicked="Register"/>
     </Grid>
 
 </ContentPage>

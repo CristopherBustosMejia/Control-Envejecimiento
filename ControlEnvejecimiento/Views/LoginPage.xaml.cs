@@ -31,6 +31,12 @@ namespace ControlEnvejecimiento.Views
                 await Toast.Make(result ? "Loggeado" : "No Loggeado").Show();
             }
         }
+
+        private async void Register(object sender, EventArgs e)
+        {
+            // Aquí es donde se realiza la navegación a la otra página
+            await Navigation.PushAsync(new SignInPage());
+        }
     }
 
 }
