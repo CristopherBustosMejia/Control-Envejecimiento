@@ -40,10 +40,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#ffffff" BorderColor="#ffffff"/>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#ffffff" BorderColor="#ffffff" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="800,800"/>
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="800,800" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -79,6 +79,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\DashboardPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ForgotPasswordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SignInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

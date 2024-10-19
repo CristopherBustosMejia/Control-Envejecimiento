@@ -32,10 +32,15 @@ namespace ControlEnvejecimiento.Views
             }
         }
 
-        private async void Register(object sender, EventArgs e)
+        private async void OnRegisterClicked(object sender, EventArgs e)
         {
             // Aquí es donde se realiza la navegación a la otra página
             await Navigation.PushAsync(new SignInPage());
+        }
+        private async void OnForgotPasswordClicked(object sender, EventArgs e)
+        {
+            // Aquí es donde se realiza la navegación a la otra página
+            await Navigation.PushAsync(new ForgotPasswordPage());
         }
     }
 
