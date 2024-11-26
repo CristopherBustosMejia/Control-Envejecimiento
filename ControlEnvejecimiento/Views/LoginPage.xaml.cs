@@ -17,14 +17,14 @@ namespace ControlEnvejecimiento.Views
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
-            if(EmailEntry.Text == String.Empty && PasswordEntry.Text == String.Empty)
+            if (EmailEntry.Text == String.Empty && PasswordEntry.Text == String.Empty)
             {
                 await Toast.Make("Porfavor asegurese de llenar los 2 campos").Show();
                 return;
             }
-            if(BindingContext is  LoginViewModel viewModel)
+            if (BindingContext is LoginViewModel viewModel)
             {
-                bool result  = await viewModel.Login(EmailEntry.Text, PasswordEntry.Text);
+                bool result = await viewModel.Login(EmailEntry.Text, PasswordEntry.Text);
                 await Toast.Make(result ? "Loggeado" : "No Loggeado").Show();
             }
         }
@@ -49,6 +49,12 @@ namespace ControlEnvejecimiento.Views
         {
             await Navigation.PushModalAsync(new ForgotPasswordPage());
         }
+
+        private async void OnDasboardClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new DashboardPage());
+        }
+      
     }
 
 }
