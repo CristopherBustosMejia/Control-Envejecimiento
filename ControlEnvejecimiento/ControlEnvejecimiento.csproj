@@ -73,16 +73,43 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AddAdminPage.xaml.cs">
+	    <DependentUpon>AddAdminPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\AddMaterialPage.xaml.cs">
+	    <DependentUpon>AddMaterialPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\AddSamplesPage.xaml.cs">
+	    <DependentUpon>AddSamplesPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ConsultSamplesPage.xaml.cs">
+	    <DependentUpon>ConsultSamplesPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\AddAdminPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddMaterialPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddSamplesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ConsultSamplesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\DashboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ForgotPasswordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SamplesWait.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SignInPage.xaml">

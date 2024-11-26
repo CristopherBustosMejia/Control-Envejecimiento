@@ -2,15 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ControlEnvejecimiento.Views.DashboardPage"
-             Title="DashboardPage">
+             Title="DashboardPage"
+             BackgroundColor="#162534">
 
-    <Grid>
+    <Grid Padding="30,20,30,10" RowSpacing="10" Margin="0,45,0,30" BackgroundColor="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" BackgroundColor="White">
+            <Label Text="Inicio" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnSpacing="10" RowSpacing="10" 
+              BackgroundColor="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -18,14 +25,51 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/> 
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0"
-                    BackgroundColor=""/>
+            <Frame Grid.Row="0" Grid.Column="0"
+                   BackgroundColor="#F1F1F1">
+                <Grid BackgroundColor="Transparent" Margin="-20,-20,-20,-20">
+                    <Label Text="+" FontSize="Title" HorizontalTextAlignment="End" Padding="0,0,15,0"/>
+                    <Button Text="Agregar material" Background="Transparent" Clicked="OnAddMaterialClicked"
+                            TextColor="Black" Margin="-20,30,-20,-20" Padding="0,-30,0,0"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="#F1F1F1">
+                <Grid BackgroundColor="Transparent" Margin="-20,-20,-10,-20">
+                    <Image Source="admin" HorizontalOptions="End" HeightRequest="20" Margin="0,-140,0,0"/>
+                    <Button Text="Añadir administrador" Background="Transparent" Clicked="OnAddAdminClicked"
+                            TextColor="Black" Margin="-20,30,-20,-20" Padding="10,-30,0,0"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="0"
+                   BackgroundColor="#F1F1F1">
+                <Grid BackgroundColor="Transparent" Margin="-20,-20,-10,-20">
+                    <Image Source="consultar" HorizontalOptions="End" HeightRequest="20" Margin="0,-140,0,0"/>
+                    <Button LineBreakMode="WordWrap" Text="Consultar todas las muestras" Background="Transparent" 
+                            TextColor="Black" Margin="-20,30,-20,-20" Padding="10,-30,0,0" Clicked="OnConsultSamplesClicked"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="1"
+                   BackgroundColor="#F1F1F1">
+                <Grid BackgroundColor="Transparent" Margin="-20,-20,-10,-20">
+                    <Image Source="agregar" HorizontalOptions="End" HeightRequest="20" Margin="0,-140,0,0"/>
+                    <Button LineBreakMode="WordWrap" Text="Agregar pruebas" Background="Transparent" 
+                            TextColor="Black" Margin="-20,30,-20,-20" Padding="10,-30,0,0" Clicked="OnAddSamplesClicked"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="0"
+                   BackgroundColor="#F1F1F1">
+                <Grid BackgroundColor="Transparent" Margin="-23,-20,-15,-20">
+                    <Image Source="pendiente" HorizontalOptions="End" HeightRequest="20" Margin="0,-140,0,0"/>
+                    <Button LineBreakMode="WordWrap" Text="Pruebas pendientes de activar" Background="Transparent" 
+                            TextColor="Black" Margin="-20,30,-20,-20" Padding="10,-30,0,0" Clicked="OnSamplesWaitClicked"/>
+                </Grid>
+            </Frame>
         </Grid>
-        
+
     </Grid>
     
 </ContentPage>
