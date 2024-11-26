@@ -52,7 +52,8 @@ namespace ControlEnvejecimiento.Views
 
         private async void OnDasboardClicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new DashboardPage());
+            //await Navigation.PushAsync(new DashboardPage());
+            Application.Current.MainPage = new NavigationPage (new DashboardPage());
         }
       
     }

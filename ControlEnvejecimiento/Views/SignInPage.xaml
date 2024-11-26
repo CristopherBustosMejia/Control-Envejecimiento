@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:ControlEnvejecimiento.ViewModels;assembly=ControlEnvejecimiento"
              x:Class="ControlEnvejecimiento.Views.SignInPage"
-             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="inicio">
 
     <ContentPage.BindingContext>

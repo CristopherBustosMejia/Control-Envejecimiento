@@ -4,6 +4,7 @@
              xmlns:components="clr-namespace:ControlEnvejecimiento.Components"
              xmlns:viewModel="clr-namespace:ControlEnvejecimiento.ViewModels;assembly=ControlEnvejecimiento"
              x:Class="ControlEnvejecimiento.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="inicio">
 
     <ContentPage.BindingContext>
