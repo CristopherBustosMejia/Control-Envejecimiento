@@ -50,14 +50,12 @@
                             <Span Text="Inicia Sesion" TextColor="#71a02b"
                                   TextDecorations="None">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                    <TapGestureRecognizer Tapped="OnLoginTapped"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-
-                <ActivityIndicator IsRunning="False" Color="BlueViolet" x:Name="activityIndicator"/>
             </Grid>
         </Border>
     </Grid>

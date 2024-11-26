@@ -52,19 +52,21 @@ public partial class SignInPage : ContentPage
 		};
 		if(BindingContext is SignInViewModel viewModel)
 		{
-			activityIndicator.IsRunning = true;
 			bool result = await viewModel.SigninUserSelf(usuarioDTO);
             if (result)
 			{
-                activityIndicator.IsRunning = false;
                 await DisplayAlert("Operacion exitosa", $"El usuario {usuarioDTO.Nombre} ha sido creado correctamente", "OK");
 				await Navigation.PopAsync();
 			}
 			else
 			{
-                activityIndicator.IsRunning = false;
                 await DisplayAlert("Operacion Fallida", "No se pudo registrar el usuario", "OK");
             }
 		}
 	}
+
+    private async void OnLoginTapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PopModalAsync();
+    }
 }

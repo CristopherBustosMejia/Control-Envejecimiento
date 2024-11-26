@@ -38,9 +38,9 @@
                         <FormattedString>
                             <Span Text="¿Olvidaste tu contraseña?" TextColor="#71a02b"
                                   TextDecorations="None">
-                                <!--<Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
-                                </Span.GestureRecognizers>-->
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                                </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
                     </Label.FormattedText>
@@ -58,7 +58,7 @@
                             <Span Text="Registrate" TextColor="#71a02b"
                                   TextDecorations="None">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                    <TapGestureRecognizer Tapped="OnRegisterTapped"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
@@ -66,10 +66,6 @@
                 </Label>
             </Grid>
         </Border>
-        <Grid ColumnDefinitions="*,*">
-            <Button Grid.Column="0" VerticalOptions="End" Text="Ir a registro" Clicked="OnRegisterClicked"/>
-            <Button Grid.Column="1" VerticalOptions="End" Text="Ir a olvidar contraseña" Clicked="OnForgotPasswordClicked"/>
-        </Grid>
     </Grid>
 
 </ContentPage>

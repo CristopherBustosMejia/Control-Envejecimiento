@@ -8,14 +8,11 @@ namespace ControlEnvejecimiento.Views
 {
     public partial class LoginPage : ContentPage
     {
-        public ICommand TapCommand => new Command(async () => await Navigation.PushModalAsync(new SignInPage()));
-
         public LoginPage()
         {
             InitializeComponent();
             LoginViewModel viewModel = new LoginViewModel();
             BindingContext = viewModel;
-            
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -41,6 +38,16 @@ namespace ControlEnvejecimiento.Views
         {
             // Aquí es donde se realiza la navegación a la otra página
             await Navigation.PushAsync(new ForgotPasswordPage());
+        }
+
+        private async void OnRegisterTapped(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushModalAsync(new SignInPage());
+        }
+
+        private async void OnForgotPasswordTapped(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushModalAsync(new ForgotPasswordPage());
         }
     }
 
