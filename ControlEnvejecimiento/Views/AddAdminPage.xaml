@@ -3,11 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ControlEnvejecimiento.Views.AddAdmin"
              NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#162534"
              Title="AddAdmin">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <ScrollView>
+        <Grid Padding="30,20,30,10" RowSpacing="10" Margin="0,95,0,90" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" BackgroundColor="White">
+                <Label Text="Registrar nuevo administrador" FontAttributes="Bold" FontSize="20" Padding="0,30,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="1"  RowDefinitions="*,*,*" Background="Transparent" RowSpacing="10" Padding="30,30,30,0">
+                <Entry x:Name="NameEntry" Grid.Row="0"
+                       Placeholder="Nombre" Margin="0,30,0,0"/>
+                <Entry x:Name="EmailEntry" Grid.Row="1"
+                       Placeholder="Correo" Margin="0,30,0,0"/>
+                <Button x:Name="SignInBtn" Grid.Row="2" TextColor="Black"
+                        Text="Registrar" HeightRequest="50" Margin="0,0,0,0"
+                        Background="#c0e863" FontAttributes="Bold"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <ImageButton Source="home" BackgroundColor="#c0e863" HeightRequest="40" WidthRequest="40" 
+                 HorizontalOptions="End" CornerRadius="50" Padding="5,0,5,0" Clicked="OnHomeClicked"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

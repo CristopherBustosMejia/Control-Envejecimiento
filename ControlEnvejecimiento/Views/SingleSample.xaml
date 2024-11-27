@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlEnvejecimiento.Views.SingleSample"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#162534"
+             Title="SingleSample">
+
+    <ScrollView>
+        <Grid Padding="30,20,30,10" RowSpacing="10" Margin="0,45,0,30" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" BackgroundColor="White">
+                <Label Text="Muestra #" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid RowDefinitions="*,*" RowSpacing="10">
+                    <Frame Grid.Row="0">
+                        <Grid RowDefinitions="*,*,*,*,*,*" RowSpacing="10">
+                            <Label Grid.Row="0" Text="Fecha de inicio: " />
+                            <Label Grid.Row="1" Text="Ciclos: "/>
+                            <Grid ColumnDefinitions="*,*,*,*" Grid.Row="2" ColumnSpacing="5">
+                                <Label Grid.Column="0" Text="Estatus: "/>
+                                <Button Grid.Column="1" Text="Pendiente" FontSize="9" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#ffeaa0" TextColor="Black" FontAttributes="Bold"/>
+                                <Button Grid.Column="2" Text="Activo" FontSize="9" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#9de27e" TextColor="Black" FontAttributes="Bold"/>
+                                <Button Grid.Column="3" Text="Terminado" FontSize="8.3" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#d2d2d2" TextColor="Black" FontAttributes="Bold"/>
+                            </Grid>
+                            <Label Grid.Row="3" Text="Dureza estándar:"/>
+                            <Label Grid.Row="4" Text="Modulo de elasticidad estándar: "/>
+                            <Label Grid.Row="5" Text="Conductividad eléctrica estándar: "/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="1">
+                        <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="50*,70*" RowSpacing="10">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Dureza después del proceso: " Padding="0,0,0,0"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Modulo de elasticidad: "/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="Degradación corrosiva: " />
+                            <Label Grid.Row="3" Grid.Column="0" Text="Conductividad eléctrica: "/>
+                            <Entry Grid.Row="0" Grid.Column="1"/>
+                            <Entry Grid.Row="1" Grid.Column="1"/>
+                            <Entry Grid.Row="2" Grid.Column="1"/>
+                            <Entry Grid.Row="3" Grid.Column="1"/>
+                            <Button Grid.Row="4" Grid.Column="1" Text="Subir" BackgroundColor="#c0e863" TextColor="Black"
+                                    WidthRequest="70" HeightRequest="35" HorizontalOptions="End" Padding="0,0,0,0"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <ImageButton Source="descargar" BackgroundColor="#c0e863" HeightRequest="40" WidthRequest="40" 
+                             HorizontalOptions="Start" CornerRadius="50" Padding="5,0,5,0" />
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <ImageButton Source="home" BackgroundColor="#c0e863" HeightRequest="40" WidthRequest="40" 
+                             HorizontalOptions="End" CornerRadius="50" Padding="5,0,5,0" />
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>
