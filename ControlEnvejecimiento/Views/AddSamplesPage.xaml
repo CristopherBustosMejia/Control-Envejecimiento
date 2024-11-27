@@ -19,7 +19,11 @@
             </Grid>
 
             <Grid Grid.Row="1"  RowDefinitions="*,*,*" Background="Transparent" RowSpacing="10" Padding="30,30,30,0">
-                <Picker  Grid.Row="0" />
+                <Grid ColumnDefinitions="95*,15*">
+                    <Entry Grid.Column="0" Grid.Row="0" Placeholder="Elegir tipo de material ..." Margin="0,20,0,0"/>
+                    <Image Grid.Column="1" Source="desplegar" HeightRequest="20" Margin="0,25,0,0"/>
+                    <Image Grid.Column="1" Source="desplegar" HeightRequest="20" Margin="0,25,0,0"/>
+                </Grid>
                 <Entry Grid.Row="1"
                    Placeholder="Ciclos" Margin="0,30,0,0"/>
                 <Button Grid.Row="2" TextColor="Black"

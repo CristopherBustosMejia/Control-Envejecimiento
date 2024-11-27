@@ -7,7 +7,7 @@
              Title="ConsultSamples">
     
     <ScrollView>
-        <Grid Padding="30,20,30,10" RowSpacing="10" Margin="0,45,0,30" BackgroundColor="White">
+        <Grid Padding="30,20,30,10" RowSpacing="40" Margin="0,45,0,30" BackgroundColor="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="90*"/>
@@ -15,17 +15,46 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" BackgroundColor="White">
-                <Label Text="Consulta de muestras" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
+                <Grid RowDefinitions="*,*" RowSpacing="25">
+                    <Label Grid.Row="0" Text="Consulta de muestras" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
+                    <Grid Grid.Row="1" ColumnDefinitions="*,*,*" RowDefinitions="*,*" ColumnSpacing="5" RowSpacing="10">
+                        <Button Grid.Column="0" Grid.Row="0" BorderColor="#cecece" BackgroundColor="Transparent" BorderWidth="2" Text="Pendientes" TextColor="Black"/>
+                        <Button Grid.Column="1" Grid.Row="0" BorderColor="#cecece" BackgroundColor="Transparent" BorderWidth="2" Text="Activos" TextColor="Black"/>
+                        <Button Grid.Column="2" Grid.Row="0" BorderColor="#cecece" BackgroundColor="Transparent" BorderWidth="2" Text="Terminados" TextColor="Black"/>
+                        <Button Grid.Column="1" Grid.Row="1" BorderColor="#cecece" BackgroundColor="#cecece" BorderWidth="2" Text="Todos" TextColor="Black"/>
+                    </Grid>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="1">
-                <Grid RowDefinitions="10*,90*">
-                    <Picker Grid.Row="0">
+                <Grid RowDefinitions="*,*,*,*,*" RowSpacing="15" Padding="0,-10,0,0">
+                    <!--<Picker Grid.Row="0">
                         
                     </Picker>
                     <ListView Grid.Row="1">
 
-                    </ListView>
+                    </ListView>-->
+                    <Frame Grid.Row="0" BackgroundColor="#F1F1F1">
+                        <Grid RowDefinitions="*,*,*" RowSpacing="10">
+                            <Label Grid.Row="0" Text="Material: Bronce"/>
+                            <Label Grid.Row="1" Text="Tipo de material: Bronce 844"/>
+                            <Label Grid.Row="2" Text="Estatus: Pendiente"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="1" BackgroundColor="#F1F1F1">
+                        <Grid RowDefinitions="*,*,*" RowSpacing="10">
+                            <Label Grid.Row="0" Text="Material: Bronce"/>
+                            <Label Grid.Row="1" Text="Tipo de material: Bronce SAE64"/>
+                            <Label Grid.Row="2" Text="Estatus: Activo"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" BackgroundColor="#F1F1F1">
+                        <Grid RowDefinitions="*,*,*" RowSpacing="10">
+                            <Label Grid.Row="0" Text="Material: Aluminio"/>
+                            <Label Grid.Row="1" Text="Tipo de material: Aluminio 6262-T651"/>
+                            <Label Grid.Row="2" Text="Estatus: Terminado"/>
+                        </Grid>
+                    </Frame>
                 </Grid>
             </Grid>
 
@@ -33,7 +62,7 @@
                 <ImageButton Source="home" BackgroundColor="#c0e863" HeightRequest="40" WidthRequest="40" 
              HorizontalOptions="End" CornerRadius="50" Padding="5,0,5,0" />
             </Grid>
-            <Button Grid.Row="2" HorizontalOptions="Start" Clicked="OnSingleSampleClicked"/>
+            <Button Grid.Row="2" HorizontalOptions="Start" Clicked="OnSingleSampleClicked" BackgroundColor="Transparent"/>
         </Grid>
     </ScrollView>
 </ContentPage>

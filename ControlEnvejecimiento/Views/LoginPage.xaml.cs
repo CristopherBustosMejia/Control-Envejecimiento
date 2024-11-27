@@ -24,8 +24,9 @@ namespace ControlEnvejecimiento.Views
             }
             if (BindingContext is LoginViewModel viewModel)
             {
-                bool result = await viewModel.Login(EmailEntry.Text, PasswordEntry.Text);
-                if(result)
+                //bool result = await viewModel.Login(EmailEntry.Text, PasswordEntry.Text);
+                bool result = true;
+                if (result)
                 {
                     await Toast.Make("Sesion iniciada con exito").Show();
                     Application.Current.MainPage = new NavigationPage(new DashboardPage());
@@ -35,6 +36,7 @@ namespace ControlEnvejecimiento.Views
                     await Toast.Make("No se pudo iniciar sesion").Show();
                 }
             }
+
         }
 
         private async void OnRegisterClicked(object sender, EventArgs e)

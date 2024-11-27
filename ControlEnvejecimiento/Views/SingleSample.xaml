@@ -15,24 +15,24 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" BackgroundColor="White">
-                <Label Text="Muestra #" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
+                <Label Text="Muestra - Bronce SAE64" FontAttributes="Bold" FontSize="20" Padding="0,10,0,0"/>
             </Grid>
 
             <Grid Grid.Row="1">
                 <Grid RowDefinitions="*,*" RowSpacing="10">
                     <Frame Grid.Row="0">
                         <Grid RowDefinitions="*,*,*,*,*,*" RowSpacing="10">
-                            <Label Grid.Row="0" Text="Fecha de inicio: " />
-                            <Label Grid.Row="1" Text="Ciclos: "/>
+                            <Label Grid.Row="0" Text="Fecha de inicio: 28/09/2024" />
+                            <Label Grid.Row="1" Text="Ciclos: 7"/>
                             <Grid ColumnDefinitions="*,*,*,*" Grid.Row="2" ColumnSpacing="5">
                                 <Label Grid.Column="0" Text="Estatus: "/>
-                                <Button Grid.Column="1" Text="Pendiente" FontSize="9" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#ffeaa0" TextColor="Black" FontAttributes="Bold"/>
+                                <Button Grid.Column="1" Text="Pendiente" BorderColor="#818181" BorderWidth="2" FontSize="9" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#ffeaa0" TextColor="Black" FontAttributes="Bold"/>
                                 <Button Grid.Column="2" Text="Activo" FontSize="9" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#9de27e" TextColor="Black" FontAttributes="Bold"/>
                                 <Button Grid.Column="3" Text="Terminado" FontSize="8.3" HeightRequest="30" Margin="0,-10,0,0" BackgroundColor="#d2d2d2" TextColor="Black" FontAttributes="Bold"/>
                             </Grid>
-                            <Label Grid.Row="3" Text="Dureza estándar:"/>
-                            <Label Grid.Row="4" Text="Modulo de elasticidad estándar: "/>
-                            <Label Grid.Row="5" Text="Conductividad eléctrica estándar: "/>
+                            <Label Grid.Row="3" Text="Dureza estándar: 75"/>
+                            <Label Grid.Row="4" Text="Módulo de elasticidad estándar: 9200"/>
+                            <Label Grid.Row="5" Text="Conductividad eléctrica estándar: 11"/>
                         </Grid>
                     </Frame>
                     <Frame Grid.Row="1">
