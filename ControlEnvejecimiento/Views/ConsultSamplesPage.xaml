@@ -19,9 +19,14 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <ListView>
-                    
-                </ListView>
+                <Grid RowDefinitions="10*,90*">
+                    <Picker Grid.Row="0">
+                        
+                    </Picker>
+                    <ListView Grid.Row="1">
+
+                    </ListView>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="2">
