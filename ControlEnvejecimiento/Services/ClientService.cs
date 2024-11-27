@@ -30,11 +30,17 @@ namespace ControlEnvejecimiento.Services
         }
         public async Task<HttpStatusCode> LoginUser(Dictionary<String, String> user)
         {
-            String requestUri = $"{_baseUri}Usuarios/Login";
-            String jsonContent = JsonConvert.SerializeObject(user);
-            StringContent content = new StringContent(jsonContent,Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await _httpClient.PostAsync(requestUri, content);
-            return response.StatusCode;
+            try
+            {
+                String requestUri = $"{_baseUri}Usuarios/Login";
+                String jsonContent = JsonConvert.SerializeObject(user);
+                StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await _httpClient.PostAsync(requestUri, content);
+                return response.StatusCode;
+            }catch (Exception ex)
+            {
+                return HttpStatusCode.InternalServerError;
+            }
         }
     }
 }
